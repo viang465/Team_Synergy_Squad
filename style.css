@@ -1,0 +1,115 @@
+/* --- Root Variables & Reset --- */
+:root {
+    --primary: #2c5e50;    /* Deep Jungle Green */
+    --secondary: #f4f1ea;  /* Sand/Cream */
+    --accent: #d4a373;     /* Wood/Tan */
+    --text: #333;
+    --white: #ffffff;
+    --error: #d9534f;
+    --success: #5cb85c;
+    --stars: #ffc107;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--secondary);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* --- Layout Containers --- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* --- Navigation & Header --- */
+header, .nav-bar, nav {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+nav a button, .nav-bar a button, .nav-buttons a button {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav a button:hover, .nav-bar a button:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+/* --- Sections & Cards --- */
+section, .booking-container, .form-box, .setup-card {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+h2 { color: var(--primary); margin-bottom: 20px; text-align: center; }
+
+/* --- Forms --- */
+.form-group { margin-bottom: 15px; text-align: left; }
+label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary); }
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button[type="submit"], .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover { background: #1e4037; }
+
+/* --- Review Stars --- */
+.stars { color: var(--stars); font-size: 1.2rem; }
+
+/* --- Alerts --- */
+.alert { padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+.success { background: #d4edda; color: var(--success); border: 1px solid #c3e6cb; }
+.error { background: #f8d7da; color: var(--error); border: 1px solid #f5c6cb; }
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
